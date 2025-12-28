@@ -1,4 +1,10 @@
-import { List, ActionPanel, Action, showHUD, closeMainWindow } from "@raycast/api";
+import {
+  List,
+  ActionPanel,
+  Action,
+  showHUD,
+  closeMainWindow,
+} from "@raycast/api";
 import { useEffect, useState } from "react";
 import { list, loadHistory } from "./clipboard";
 import { setClipboard } from "./utils";
@@ -31,7 +37,9 @@ export default function Command() {
       {entries.map((e, i) => (
         <List.Item
           key={`${e.timestamp}-${i}`}
-          title={e.text.length > 100 ? e.text.substring(0, 100) + "..." : e.text}
+          title={
+            e.text.length > 100 ? e.text.substring(0, 100) + "..." : e.text
+          }
           subtitle={`#${i + 1}  |  ${new Date(e.timestamp).toLocaleTimeString()}`}
           actions={
             <ActionPanel>

@@ -58,6 +58,12 @@ export async function getCycleState(): Promise<CycleState> {
   return { position: 0, timestamp: 0 };
 }
 
-export async function setCycleState(position: number, timestamp: number): Promise<void> {
-  await LocalStorage.setItem(CYCLE_STATE_KEY, JSON.stringify({ position, timestamp }));
+export async function setCycleState(
+  position: number,
+  timestamp: number,
+): Promise<void> {
+  await LocalStorage.setItem(
+    CYCLE_STATE_KEY,
+    JSON.stringify({ position, timestamp }),
+  );
 }
