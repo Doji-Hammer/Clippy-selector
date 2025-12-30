@@ -9,7 +9,7 @@ interface CyclePreferences {
 
 export default async function () {
   const prefs = getPreferenceValues<CyclePreferences>();
-  const cycleLimit = Number(prefs.cycleLimit) || 5;
+  const cycleLimit = Number(prefs.cycleLimit) || 10;
   const cycleTimeout = Number(prefs.cycleTimeout) || 2000;
 
   await loadHistory();
@@ -40,6 +40,6 @@ export default async function () {
   await setClipboard(text);
 
   // Show HUD with position and preview
-  const preview = text.length > 25 ? text.substring(0, 25) + "..." : text;
+  const preview = text.length > 75 ? text.substring(0, 75) + "..." : text;
   await showHUD(`[${newPosition + 1}/${cycleLimit}] ${preview}`);
 }

@@ -14,33 +14,69 @@
       "mode": "view"
     },
     {
-      "name": "restore-1",
-      "title": "Restore 1st Previous",
-      "description": "Restore the most-recent history item",
-      "mode": "no-view"
-    },
-    {
-      "name": "restore-2",
-      "title": "Restore 2nd Previous",
-      "description": "Restore the 2nd history item",
-      "mode": "no-view"
-    },
-    {
-      "name": "restore-3",
-      "title": "Restore 3rd Previous",
-      "description": "Restore the 3rd history item",
-      "mode": "no-view"
-    },
-    {
-      "name": "restore-4",
-      "title": "Restore 4th Previous",
-      "description": "Restore the 4th history item",
-      "mode": "no-view"
-    },
-    {
       "name": "cycle",
       "title": "Cycle Clipboard",
       "description": "Cycle through recent clipboard entries with repeated presses",
+      "mode": "no-view"
+    },
+    {
+      "name": "manage-searches",
+      "title": "Manage Search Engines",
+      "description": "Add, edit, and organize search engines and groups",
+      "mode": "view"
+    },
+    {
+      "name": "search-direct-1",
+      "title": "Quick Search 1",
+      "description": "Search clipboard text with configured engine (slot 1)",
+      "mode": "no-view"
+    },
+    {
+      "name": "search-direct-2",
+      "title": "Quick Search 2",
+      "description": "Search clipboard text with configured engine (slot 2)",
+      "mode": "no-view"
+    },
+    {
+      "name": "search-direct-3",
+      "title": "Quick Search 3",
+      "description": "Search clipboard text with configured engine (slot 3)",
+      "mode": "no-view"
+    },
+    {
+      "name": "search-direct-4",
+      "title": "Quick Search 4",
+      "description": "Search clipboard text with configured engine (slot 4)",
+      "mode": "no-view"
+    },
+    {
+      "name": "search-direct-5",
+      "title": "Quick Search 5",
+      "description": "Search clipboard text with configured engine (slot 5)",
+      "mode": "no-view"
+    },
+    {
+      "name": "search-picker-1",
+      "title": "Search Picker 1",
+      "description": "Pick from configured search group (slot 1)",
+      "mode": "view"
+    },
+    {
+      "name": "search-picker-2",
+      "title": "Search Picker 2",
+      "description": "Pick from configured search group (slot 2)",
+      "mode": "view"
+    },
+    {
+      "name": "search-picker-3",
+      "title": "Search Picker 3",
+      "description": "Pick from configured search group (slot 3)",
+      "mode": "view"
+    },
+    {
+      "name": "fetch-transcript",
+      "title": "Fetch YouTube Transcript",
+      "description": "Download transcript from YouTube URL in clipboard",
       "mode": "no-view"
     }
   ],
@@ -65,7 +101,7 @@
       "name": "cycleLimit",
       "type": "textfield",
       "title": "Cycle limit",
-      "default": "5",
+      "default": "10",
       "required": false,
       "description": "Maximum number of entries to cycle through"
     },
@@ -76,6 +112,22 @@
       "default": "2000",
       "required": false,
       "description": "Time window for consecutive cycle presses before resetting"
+    },
+    {
+      "name": "transcriptFolder",
+      "type": "directory",
+      "title": "Transcript folder",
+      "default": "~/Downloads",
+      "required": false,
+      "description": "Where to save YouTube transcripts"
+    },
+    {
+      "name": "transcriptLanguage",
+      "type": "textfield",
+      "title": "Transcript language",
+      "default": "en",
+      "required": false,
+      "description": "Preferred language code for transcripts (e.g., en, es, fr)"
     }
   ],
   "dependencies": {
