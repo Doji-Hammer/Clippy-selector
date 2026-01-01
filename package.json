@@ -78,6 +78,12 @@
       "title": "Fetch YouTube Transcript",
       "description": "Download transcript from YouTube URL in clipboard",
       "mode": "no-view"
+    },
+    {
+      "name": "fetch-transcript-ai",
+      "title": "Transcript to AI",
+      "description": "Fetch YouTube transcript and open with an AI model",
+      "mode": "view"
     }
   ],
   "preferences": [

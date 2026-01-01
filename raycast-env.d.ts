@@ -50,6 +50,8 @@ declare namespace Preferences {
   export type SearchPicker3 = ExtensionPreferences & {}
   /** Preferences accessible in the `fetch-transcript` command */
   export type FetchTranscript = ExtensionPreferences & {}
+  /** Preferences accessible in the `fetch-transcript-ai` command */
+  export type FetchTranscriptAi = ExtensionPreferences & {}
 }
 
 declare namespace Arguments {
@@ -77,5 +79,7 @@ declare namespace Arguments {
   export type SearchPicker3 = {}
   /** Arguments passed to the `fetch-transcript` command */
   export type FetchTranscript = {}
+  /** Arguments passed to the `fetch-transcript-ai` command */
+  export type FetchTranscriptAi = {}
 }
 
