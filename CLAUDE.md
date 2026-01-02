@@ -78,14 +78,29 @@ src/
 
 - [x] Clipboard history storage and retrieval
 - [x] Browse History UI with search
-- [x] Cycle Clipboard with configurable limit/timeout
 - [x] Quick Search 1-5 with configurable engines
 - [x] Search Picker 1-3 with configurable groups
 - [x] Manage Search Engines UI (full CRUD)
 - [x] URL detection in Quick Search (opens URLs directly)
 - [x] Fetch YouTube Transcript via yt-dlp
-- [x] Transcript to AI (copy transcript + open AI model)
 - [x] Auto-copy transcript to clipboard
+
+### Known Issues (2026-01-02)
+
+- [ ] **Cycle Clipboard** - Not working, needs debugging
+- [ ] **Transcript to AI** - Currently opens external AI websites; should use Raycast's built-in AI chat with model/preset selection instead
+
+### Testing Status
+
+| Command | Status | Notes |
+|---------|--------|-------|
+| Browse History | ⏳ Untested | |
+| Cycle Clipboard | ❌ Broken | Not working |
+| Manage Search Engines | ⏳ Untested | |
+| Quick Search 1-5 | ⏳ Untested | |
+| Search Picker 1-3 | ⏳ Untested | |
+| Fetch YouTube Transcript | ⏳ Untested | |
+| Transcript to AI | ❌ Wrong behavior | Should use Raycast AI, not external sites |
 
 ### Potential Enhancements
 
