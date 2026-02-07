@@ -1,42 +1,76 @@
-# Clipboard History
+# Clippy Selector (Clipboard History)
 
 A Raycast extension for clipboard management, quick search, and YouTube transcript utilities.
 
 ## Features
 
-### Clipboard Management
+### 📋 Clipboard Management
 - **Browse History** - View and search clipboard entries with timestamps
 - **Cycle Clipboard** - Cycle through recent entries with a single hotkey (no UI, just press repeatedly)
 
-### Quick Search
+### 🔍 Quick Search
 - **Quick Search 1-5** - Instantly search clipboard text with your configured engine
 - **Search Picker 1-3** - Choose from a group of search engines
 - **URL Detection** - If clipboard contains a URL, opens it directly instead of searching
 - **Manage Search Engines** - Full UI to add/edit/remove engines, create groups, and assign slots
 
-### YouTube Transcripts
+### 📺 YouTube Transcripts
 - **Fetch YouTube Transcript** - Download transcript from a YouTube URL in your clipboard
 - **Transcript to AI** - Fetch transcript and open it with your preferred AI model (ChatGPT, Claude, Perplexity, Gemini, Copilot)
 
 ## Installation
 
-1. Install from Raycast Store, or clone and run `npm install && npm run dev`
-2. For YouTube transcripts, install yt-dlp:
+### Prerequisites
+- [Raycast](https://raycast.com/) installed
+- [Node.js](https://nodejs.org/) 18+ and npm
+- For YouTube transcripts: [yt-dlp](https://github.com/yt-dlp/yt-dlp) (`brew install yt-dlp`)
+
+### Install from Source
+
+1. Clone this repository:
    ```bash
-   brew install yt-dlp
+   git clone <repository-url>
+   cd Clippy-selector
    ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Build the extension:
+   ```bash
+   npm run build
+   ```
+
+4. Import into Raycast:
+   ```bash
+   npm run dev
+   ```
+   
+   Or manually import:
+   - Open Raycast
+   - Run `Import Extension`
+   - Select the `Clippy-selector` folder
+
+### Development Mode
+
+To run in development mode with hot reload:
+```bash
+npm run dev
+```
 
 ## Commands
 
-| Command | Description |
-|---------|-------------|
-| Browse History | View clipboard entries in searchable list |
-| Cycle Clipboard | Cycle through last 10 entries with repeated presses |
-| Quick Search 1-5 | Search clipboard text with configured engine |
-| Search Picker 1-3 | Pick from configured search group |
-| Manage Search Engines | Configure engines, groups, and slots |
-| Fetch YouTube Transcript | Download transcript from YouTube URL in clipboard |
-| Transcript to AI | Fetch transcript and open with AI model |
+| Command | Mode | Description |
+|---------|------|-------------|
+| Browse History | View | View clipboard entries in searchable list |
+| Cycle Clipboard | No-view | Cycle through last 10 entries with repeated presses |
+| Quick Search 1-5 | No-view | Search clipboard text with configured engine |
+| Search Picker 1-3 | View | Pick from configured search group |
+| Manage Search Engines | View | Configure engines, groups, and slots |
+| Fetch YouTube Transcript | No-view | Download transcript from YouTube URL in clipboard |
+| Transcript to AI | View | Fetch transcript and open with AI model |
 
 ## Configuration
 
@@ -81,10 +115,61 @@ A Raycast extension for clipboard management, quick search, and YouTube transcri
 3. Select an AI model
 4. Transcript is copied to clipboard and AI opens
 
-## Author
+## Project Structure
 
-Doji-Hammer
+```
+Clippy-selector/
+├── assets/
+│   └── extension-icon.png    # Extension icon
+├── src/
+│   ├── index.tsx             # Browse History command
+│   ├── cycle.ts              # Cycle Clipboard command
+│   ├── clipboard.ts          # Clipboard storage logic
+│   ├── watcher.ts            # Clipboard polling
+│   ├── utils.ts              # Utility functions
+│   ├── search-engines.ts     # Search engine config
+│   ├── search-direct.ts      # Quick search logic
+│   ├── search-direct-*.ts    # Individual slot commands
+│   ├── search-picker.tsx     # Search picker UI
+│   ├── search-picker-*.tsx   # Individual picker commands
+│   ├── manage-searches.tsx   # Search engine management UI
+│   ├── fetch-transcript.ts   # YouTube transcript command
+│   ├── fetch-transcript-ai.tsx  # Transcript to AI command
+│   └── transcript-utils.ts   # Transcript helper functions
+├── package.json              # Extension manifest
+├── tsconfig.json             # TypeScript config
+└── README.md                 # This file
+```
+
+## Scripts
+
+| Script | Description |
+|--------|-------------|
+| `npm run build` | Build the extension |
+| `npm run dev` | Run in development mode with hot reload |
+| `npm run lint` | Run ESLint and Prettier checks |
+| `npm run fix-lint` | Auto-fix linting issues |
+| `npm run publish` | Publish to Raycast Store |
+
+## Troubleshooting
+
+### Extension not appearing in Raycast
+- Make sure you've run `npm run build` or `npm run dev`
+- Try importing the extension manually via Raycast's "Import Extension" command
+
+### Clipboard not being tracked
+- Check that the "Browse History" command has been run at least once
+- Verify the poll interval preference is set correctly
+
+### YouTube transcript fails
+- Ensure yt-dlp is installed: `brew install yt-dlp`
+- Check that the video has captions/transcripts available
+- Verify the transcript language preference matches available languages
 
 ## License
 
 MIT
+
+## Author
+
+Doji-Hammer

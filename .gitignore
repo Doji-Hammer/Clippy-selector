@@ -1,3 +1,26 @@
+# Dependencies
 node_modules/
+
+# Build output
 dist/
+
+# Raycast specific
+raycast-env.d.ts
+
+# OS files
 .DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
