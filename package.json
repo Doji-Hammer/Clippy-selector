@@ -84,6 +84,12 @@
       "title": "Transcript to AI",
       "description": "Fetch YouTube transcript and open with an AI model",
       "mode": "view"
+    },
+    {
+      "name": "gpg-encrypt",
+      "title": "Encrypt with PGP Key",
+      "description": "Select a PGP key from clipboard history and encrypt a message",
+      "mode": "view"
     }
   ],
   "preferences": [

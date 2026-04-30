@@ -52,6 +52,8 @@ declare namespace Preferences {
   export type FetchTranscript = ExtensionPreferences & {}
   /** Preferences accessible in the `fetch-transcript-ai` command */
   export type FetchTranscriptAi = ExtensionPreferences & {}
+  /** Preferences accessible in the `gpg-encrypt` command */
+  export type GpgEncrypt = ExtensionPreferences & {}
 }
 
 declare namespace Arguments {
@@ -81,5 +83,7 @@ declare namespace Arguments {
   export type FetchTranscript = {}
   /** Arguments passed to the `fetch-transcript-ai` command */
   export type FetchTranscriptAi = {}
+  /** Arguments passed to the `gpg-encrypt` command */
+  export type GpgEncrypt = {}
 }
 
